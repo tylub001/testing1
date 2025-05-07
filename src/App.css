@@ -1,0 +1,26 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: rgba(255, 235, 205, 0.548);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a soft shadow */
+  font-family: Arial, Helvetica, sans-serif;
+}
+.title {
+  color: rgb(51, 17, 173); /* A deep indigo for sophistication */
+  font-weight: bold;
+  font-size: 24px;
+  text-transform: uppercase; /* Makes the text stylish */
+  letter-spacing: 1.5px; /* Adds a refined spacing effect */
+  line-height: 1.4;
+  border: 2px solid rgb(188, 187, 197); /* Slimmer border for elegance */
+  border-radius: 12px; /* Softer rounded edges */
+  background: linear-gradient(135deg, #f4f4f4, #dcdcdc); /* Subtle gradient background */
+  padding: 12px 20px; /* Adjusted padding for balance */
+  text-align: center;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.35);
+  font-style: italic;
+  
+}

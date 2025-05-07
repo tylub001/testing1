@@ -1,0 +1,258 @@
+.container {
+    width: 70%; /* Makes it take up half the screen */
+    max-width: 600px; /* Prevents it from getting too large */
+    margin: auto; /* Centers it horizontally */
+    padding: 20px;
+    background: linear-gradient(#ffffff 0%, #90cbff 100%);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6); /* Adds a soft shadow */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .task-container {
+    display: flex;
+    flex-direction: column; /* Stacks text and date vertically */
+  }
+  
+  .name {
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  .motto {
+    margin: 0;
+    margin-bottom: 16px;
+    font-style: italic;
+    color: rgb(255, 0, 0);
+    font-weight: 300;
+    font-size: 20px;
+  }
+  
+  .addTask-btn {
+    width: 50%;
+    padding: 15px;
+    margin-left: 10px;
+    background: rgb(89, 0, 255);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.5px;
+    align-self: center;
+    transition: 0.3s ease, transform 0.3s ease;
+  }
+  
+  .addTask-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  .all-completed {
+    color: green;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically */
+    gap: 10px; /* Adds spacing between elements */
+  }
+  
+  ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0; /* Removes default padding */
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    animation: slideUp 0.5s ease-in-out; /* Smooth transition */
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    white-space: nowrap; /* Prevents text from wrapping to a new line */
+  }
+  
+  li:last-child {
+    border-bottom: none; /* Removes border from last item */
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px); /* Starts slightly lower */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Moves into place */
+    }
+  }
+  
+  .task-text {
+    font-weight: bold; /* Highlights the task */
+  }
+  
+  .task-date {
+    font-size: 0.9em;
+    color: gray; /* Makes date visually distinct */
+  }
+  
+  .completed {
+    color: gray; /* Makes task text grey when completed */
+    opacity: 0.6; /* Slight fade effect */
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none; /* Prevents interaction when hidden */
+    z-index: 1000;
+  }
+  
+  .modal.show {
+    animation: fadeIn 0.5s ease forwards; /* Smooth 0.5s animation */
+    pointer-events: auto;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .modal-content {
+    width: 50%; /* Sets modal to 50% of screen width */
+    max-width: 600px; /* Prevents it from getting too large on wide screens */
+    background: rgb(253, 252, 252);
+    padding: 30px;
+    border-radius: 10px;
+    list-style-type: none;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  input {
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+  }
+  
+  input[type="checkbox"] {
+    width: 20px; /* Makes checkbox bigger */
+    height: 20px;
+    accent-color: rgb(6, 101, 189); /* Custom color for modern browsers */
+    cursor: pointer; /* Makes it feel clickable */
+    transition: transform 0.2s ease-in-out;
+    margin-right: 10px;
+  }
+  
+  input[type="checkbox"]:hover {
+    transform: scale(1.2); /* Slight hover effect */
+  }
+  
+  .delete-btn {
+    margin-left: 10px;
+    background: rgb(89, 0, 255);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 14px;
+    align-self: center;
+    transition: background-color 0.3s ease;
+  }
+  .delete-btn:hover {
+    background-color: #564aff;
+  }
+  
+  .submit-btn {
+    width: 50%;
+    background: rgb(89, 0, 255);
+    color: white;
+    align-self: center;
+    transition: 0.3s ease, transform 0.3s ease;
+    
+  }
+  
+  .submit-btn:hover {
+      transform: scale(1.05);
+    
+    }
+  
+  .cancel-btn {
+    width: 50%;
+    background-color: rgb(206, 206, 206);
+    align-self: center;
+    transition: 0.3s ease, transform 0.3s ease;
+    border: none;
+  }
+  
+  .cancel-btn:hover {
+    transform: scale(1.05);
+  
+  }
+  
+  @media (max-width: 768px) {
+    .task-container {
+      width: 80%; /* Make it wider on smaller screens */
+    }
+  
+    .container {
+      padding: 10px;
+      margin: 0;
+      width: 95%;
+    }
+  
+    #root {
+      padding: 1em;
+    }
+    .delete-btn {
+      width: 20%;
+      margin: 0;
+      padding: 10px;
+      font-size: 12px;
+    }
+  
+    .name {
+      padding: 0;
+      font-size: 40px;
+    }
+  
+    input {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+  
+    .modal-content {
+      width: 70%;
+      background-color: rgb(254, 255, 255);
+    }
+    .submit-btn {
+      width: 70%;
+    }
+  
+    .cancel-btn {
+      width: 70%;
+    }
+  }
+  
